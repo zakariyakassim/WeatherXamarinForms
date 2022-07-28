@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:extensions="clr-namespace:WeatherTest.Extensions"
+    x:Class="WeatherTest.Views.CitySearchPage"
+    Title="Search"
+    BackgroundColor="#edede9">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="Start">
+
+                <!--<Label Margin="0,40,0,0" FontSize="50" Text="WEATHER" HorizontalOptions="Center"/>-->
+                <Label Margin="0,100,0,0" TextColor="{DynamicResource SecondaryColor}" FontAttributes="Bold" Text="SEARCH FOR CITY" HorizontalOptions="Center"/>
+                <Frame CornerRadius="25" Margin="20,40,20,0" HeightRequest="50" HasShadow="False" Padding="10,0,10,0" IsClippedToBounds="True">
+                    <Entry Placeholder="City" Text="{Binding City}"/>
+                </Frame>
+                <Frame IsClippedToBounds="True" HasShadow="False" CornerRadius="25" BackgroundColor="{DynamicResource SecondaryColor}" Margin="20" HeightRequest="50" Padding="0">
+                    <Grid>
+                        <ActivityIndicator IsEnabled="{Binding IsBusy}" IsRunning="{Binding IsBusy}"/>
+                        <Button FontAttributes="Bold" BackgroundColor="{DynamicResource PrimaryColor}" IsVisible="{Binding IsBusy, Converter={extensions:BooleanConverter} }" Command="{Binding SearchCommand}" TextColor="White" Text="SEARCH"/>
+                    </Grid>
+                </Frame>
+                <Label TextTransform="Uppercase" HeightRequest="20" x:Name="ErrorLabel" Text="{Binding ErrorMessage}" TextColor="DarkRed" HorizontalOptions="Center"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+

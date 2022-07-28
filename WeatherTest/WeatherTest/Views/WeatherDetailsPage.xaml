@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="WeatherTest.Views.WeatherDetailsPage"
+    BackgroundColor="#edede9">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Image HeightRequest="100" Source="{Binding IconSource}"/>
+
+            <Label FontSize="25" FontAttributes="Bold" HorizontalOptions="Center" Text="{Binding Description}"/>
+
+            <Label FontSize="25" FontAttributes="Bold" HorizontalOptions="Center" Text="{Binding Temperature}" TextColor="{DynamicResource PrimaryColor}"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
